@@ -35,7 +35,7 @@ func (srv *Server) Restart() (string, error) {
 }
 
 func (srv *Server) Status() (string, error) {
-	cmd := exec.Command(srv.restartCmd, srv.restartArgs[0:]...)
+	cmd := exec.Command(srv.statusCmd, srv.statusArgs[0:]...)
 	out, err := cmd.CombinedOutput()
 	if err != nil {
 		return "", err
