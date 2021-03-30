@@ -36,7 +36,7 @@ func (bot * Bot)Connect() error {
 		if m.Author.ID == s.State.User.ID {
 			return
 		}
-		if m.Content == "!restart" {
+		if m.Content == "!vrestart" {
 			_, err := s.ChannelMessageSend(m.ChannelID, "Restarting Valheim server")
 			if err != nil {
 				log.Println(err.Error())
@@ -55,7 +55,7 @@ func (bot * Bot)Connect() error {
 		}
 
 		// If the message is "pong" reply with "Ping!"
-		if m.Content == "!status" {
+		if m.Content == "!vstatus" {
 			_, err := s.ChannelMessageSend(m.ChannelID, "Valheim server status:")
 			if err != nil {
 				log.Println(err.Error())
