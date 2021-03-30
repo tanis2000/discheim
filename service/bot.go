@@ -54,7 +54,6 @@ func (bot * Bot)Connect() error {
 			}
 		}
 
-		// If the message is "pong" reply with "Ping!"
 		if m.Content == "!vstatus" {
 			_, err := s.ChannelMessageSend(m.ChannelID, "Valheim server status:")
 			if err != nil {
