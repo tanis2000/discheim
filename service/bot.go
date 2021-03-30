@@ -1,6 +1,7 @@
 package service
 
 import (
+	"fmt"
 	"github.com/bwmarrin/discordgo"
 	"log"
 )
@@ -47,7 +48,7 @@ func (bot * Bot)Connect() error {
 				log.Println(err.Error())
 				return
 			}
-			_, err = s.ChannelMessageSend(m.ChannelID, out)
+			_, err = s.ChannelMessageSend(m.ChannelID, fmt.Sprintf("%.1024s", out))
 			if err != nil {
 				log.Println(err.Error())
 				return
@@ -70,7 +71,7 @@ func (bot * Bot)Connect() error {
 				}
 				return
 			}
-			_, err = s.ChannelMessageSend(m.ChannelID, out)
+			_, err = s.ChannelMessageSend(m.ChannelID, fmt.Sprintf("%.1024s", out))
 			if err != nil {
 				log.Println(err.Error())
 				return
